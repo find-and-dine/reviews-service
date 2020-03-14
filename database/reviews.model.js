@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const db = require('./index.js');
-const User = require('/users.model.js');
+const User = require('./users.model.js');
 const Restaurant = require('/restaurants.model.js');
 
 const Review = db.define('review', {
@@ -58,6 +58,8 @@ const Review = db.define('review', {
 });
 
 Review.belongsTo(Restaurant);
+Restaurant.hasMany(Review);
 Review.belongsTo(User);
+User.hasMany(Review);
 
-module.exports = Review;
+modules.export = Review;

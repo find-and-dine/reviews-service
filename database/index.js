@@ -1,16 +1,23 @@
 const Sequelize = require('Sequelize');
-const db = new Sequelize('reviews', 'root', '');
+const db = new Sequelize('reviews', 'root', '', {
+  host: 'localhost',
+  dialect: 'mysql'
+});
 const User = require('./users.model.js');
 const Restaurant = require('./restaurants.model.js');
 var Review = require('./reviews.model.js');
 
-User.sync();
-Review.sync();
-Restaurant.sync();
+module.exports = {
+  User: User,
+  Review: Review,
+  Restaurant: Restaurant,
+  db: db
+}
 
-exports.User = User;
-exports.Review = Review;
-exports.Restaurant = Restaurant;
+// exports.User = User;
+// exports.Review = Review;
+// exports.Restaurant = Restaurant;
+// exports.db = db;
 
 // Code below was prior to refactoring with Sequelize
 // const mysql = require('mysql');
