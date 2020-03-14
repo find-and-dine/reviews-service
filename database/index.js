@@ -1,18 +1,36 @@
-const Sequelize = require('Sequelize');
-const db = new Sequelize('reviews', 'root', '', {
-  host: 'localhost',
-  dialect: 'mysql'
-});
-const User = require('./users.model.js');
-const Restaurant = require('./restaurants.model.js');
-var Review = require('./reviews.model.js');
+const Sequelize = require('sequelize');
 
-module.exports = {
-  User: User,
-  Review: Review,
-  Restaurant: Restaurant,
-  db: db
-}
+const sequelize = new Sequelize('guilt_tripadvisor', 'root', '', {
+    dialect: 'mysql',
+});
+
+let db = {};
+
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
+
+module.exports = db;
+
+// const Sequelize = require('sequelize');
+// const sequelize = new Sequelize('reviews', 'root', '', {
+//   host: 'localhost',
+//   dialect: 'mysql'
+// });
+
+// const db = {};
+// db.sequelize = sequelize;
+// db.Sequelize = Sequelize;
+
+// const User = require('./users.model.js');
+// const Restaurant = require('./restaurants.model.js');
+// const Review = require('./reviews.model.js');
+
+// module.exports = {
+//   User: User,
+//   Review: Review,
+//   Restaurant: Restaurant,
+//   db: db
+// }
 
 // exports.User = User;
 // exports.Review = Review;

@@ -1,6 +1,9 @@
-const Sequelize = require('sequelize');
-const MyMethods = require('./index.js');
-const db = MyMethods.db;
+// // const Sequelize = require('sequelize');
+// const db = require('./index.js'), sequelize = db.sequeliz, Sequelize = db.Sequelize;
+
+const db = require('./index.js'),
+    sequelize = db.sequelize,
+    Sequelize = db.Sequelize;
 
 const User = db.define('user', {
   _id: {
