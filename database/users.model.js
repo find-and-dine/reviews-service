@@ -1,11 +1,8 @@
-// // const Sequelize = require('sequelize');
-// const db = require('./index.js'), sequelize = db.sequeliz, Sequelize = db.Sequelize;
-
 const db = require('./index.js'),
     sequelize = db.sequelize,
     Sequelize = db.Sequelize;
 
-const User = db.define('user', {
+const User = sequelize.define('user', {
   _id: {
     type: Sequelize.INTEGER,
     autoIncrement: true,

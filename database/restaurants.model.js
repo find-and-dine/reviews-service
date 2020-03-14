@@ -1,7 +1,8 @@
-const Sequelize = require('sequelize');
-const db = require('./index.js');
+const db = require('./index.js'),
+    sequelize = db.sequelize,
+    Sequelize = db.Sequelize;
 
-const Restaurant = db.define('restaurant', {
+const Restaurant = sequelize.define('restaurant', {
   _id: {
     type: Sequelize.INTEGER,
     autoIncrement: true,
@@ -12,7 +13,7 @@ const Restaurant = db.define('restaurant', {
     allowNull: false
   },
   claimed: {
-    type: Sequenlize.BOOLEAN,
+    type: Sequelize.BOOLEAN,
 
   }
 });

@@ -1,9 +1,10 @@
-const Sequelize = require('sequelize');
-const db = require('./index.js');
+const db = require('./index.js'),
+    sequelize = db.sequelize,
+    Sequelize = db.Sequelize;
 const User = require('./users.model.js');
-const Restaurant = require('/restaurants.model.js');
+const Restaurant = require('./restaurants.model.js');
 
-const Review = db.define('review', {
+const Review = sequelize.define('review', {
   _id: {
     type: Sequelize.INTEGER,
     autoIncrement: true,
@@ -62,4 +63,4 @@ Restaurant.hasMany(Review);
 Review.belongsTo(User);
 User.hasMany(Review);
 
-modules.export = Review;
+module.exports = Review;

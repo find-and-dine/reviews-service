@@ -1,5 +1,7 @@
 const faker = require('faker');
-const db = require('./index.js');
+const Restaurant = require('./restaurants.model.js');
+const User = require('./users.model.js');
+const Review = require('./reviews.model.js');
 
 const hereForArr = ['', 'Breakfast', 'Brunch', 'Lunch', 'Dinner', 'Dessert', 'Coffee or tea', 'Snacks', 'Drinks', 'Late night food', 'Other'];
 const travelerTypeArr = ['Couples', 'Family', 'Friends', 'Business', 'Solo'];
@@ -7,13 +9,13 @@ const travelerTypeArr = ['Couples', 'Family', 'Friends', 'Business', 'Solo'];
 const seed = () => {
   for (let i = 0; i < 100; i += 1) {
 
-    const restaurantInst = new db.Restaurant({
+    const restaurantInst = new Restaurant({
       _id: i,
       restaurantName: faker.random.word() + ' Restaurant',
       claimed: faker.random.boolean()
     });
 
-    const userInst = new db.User({
+    const userInst = new User({
       _id: i,
       username: faker.name.findName(),
       avatarURL: faker.image.avatar(),
@@ -21,7 +23,7 @@ const seed = () => {
       postsCount: Math.floor(Math.random() * 500),
       helpfulVotesCount: Math.floor(Math.random() * 250),
       loc: faker.address.city(),
-      lev: Math.floor.(Math.random() * 5)
+      lev: Math.floor(Math.random() * 5)
     });
   }
 
@@ -36,18 +38,19 @@ const seed = () => {
       const valueRat = Math.floor(Math.random() * 10);
 
       // this should be refactored to be more efficient
-      do {
-        let reviewerId = Math.floor(Math.random() * 100);
-      } while(usersWhoReviewed.includes(reviewerId));
+      const reviewerId = Math.floor(Math.random() * 100);
+      while (usersWhoReviewed.includes(reviewerId)) {
+        reviewerId = Math.floor(Math.random() * 100);
+      }
 
-      const reviewInst = new db.Review({
+      const reviewInst = new Review({
         title: faker.random.words(),
         body: faker.lorem.paragraphs(),
         timePosted: faker.date.past(),
-        monthVisited: faker.date.month(),
+        monthVisited: faker.date.past(),
         hereFor: hereForArr[Math.floor(Math.random() * 11)],
         votes: Math.floor(Math.random() * 20),
-        device: faker.loren.word(),
+        device: faker.lorem.word(),
         travelerType: travelerTypeArr[Math.floor(Math.random() * 5)],
         lang: faker.lorem.word(),
         rating: Math.floor(Math.random() * 10), // 10 accounts for half stars
@@ -61,7 +64,7 @@ const seed = () => {
   }
 };
 
-seed()
-  .then(( => {
-    process.exit();
-  }));
+seed();
+  // .then(() => {
+  //   process.exit();
+  // });

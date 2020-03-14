@@ -5,7 +5,6 @@ const port = 3003;
 const db = require('../database/index.js'),
     sequelize = db.sequelize,
     Sequelize = db.Sequelize;
-//const db = require('../database/index.js');
 
 app.get('/', (req, res) => res.send('Hello World!'));
 

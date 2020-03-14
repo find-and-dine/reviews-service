@@ -1,3 +1,5 @@
+/* Because I refactored with Sequelize, his file is no longer needed. I am temporarily keeping it for reference. */
+
 DROP DATABASE IF EXISTS guilt_tripadvisor;
 
 CREATE DATABASE guilt_tripadvisor;
@@ -15,7 +17,7 @@ CREATE TABLE users (
   _id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   username VARCHAR(100) NOT NULL,
   avatarURL VARCHAR(500),
-  reviewCount INT DEFAULT 0 NOT NULL,
+  reviewsCount INT DEFAULT 0 NOT NULL,
   postsCount INT DEFAULT 0 NOT NULL,
   helpfulVotesCount INT DEFAULT 0 NOT NULL,
   loc VARCHAR(50),
