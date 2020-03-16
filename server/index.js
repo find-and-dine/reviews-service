@@ -1,9 +1,15 @@
 const express = require('express');
-const app = express();
-const port = 3003;
+const path = require('path');
+const Review = require('../database/index.js');
 
+const app = express();
+const PORT = 3003;
+
+// Refactor this to query database
 app.get('/', (req, res) => res.send('Hello World!'));
 
-app.use(express.static('public'));
+app.use(express.json());
+app.use(express.urlencoded( {extended: true }));
+app.use('/', express.static(path.resolve(__dirname, '..', 'public')));
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
