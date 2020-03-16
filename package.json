@@ -9,7 +9,7 @@
   "scripts": {
     "start": "nodemon server/index.js",
     "build": "webpack -d --watch",
-    "seed": "",
+    "seed": "node database/seed.js",
     "lint": "eslint ."
   },
   "dependencies": {
