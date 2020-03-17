@@ -2,7 +2,7 @@ const faker = require('faker');
 const Review = require('../database/index.js');
 
 const hereForArr = ['', 'Breakfast', 'Brunch', 'Lunch', 'Dinner', 'Dessert', 'Coffee or tea', 'Snacks', 'Drinks', 'Late night food', 'Other'];
-const travelerTypeArr = ['Couples', 'Family', 'Friends', 'Business', 'Solo'];
+const travelerTypeArr = ['', 'Couples', 'Family', 'Friends', 'Business', 'Solo'];
 
 // Stretch goal: Make it so same user can't leave multiple reviews
 // and highest userId equals total number of users minus 1
@@ -39,7 +39,7 @@ const seed = () => {
         hereFor: hereForArr[Math.floor(Math.random() * 11)],
         votes: Math.floor(Math.random() * 20),
         device: faker.lorem.word(),
-        travelerType: travelerTypeArr[Math.floor(Math.random() * 5)],
+        travelerType: travelerTypeArr[Math.floor(Math.random() * 6)],
         lang: faker.lorem.word(),
         rating: Math.floor(Math.random() * 10), // 10 instead of 5 to account for half stars
         serviceRating: Math.floor(Math.random() * 10),
