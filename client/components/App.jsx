@@ -1,3 +1,6 @@
+    // Stretch goal: refactor into additional sub-components/rethink file system
+    // with potential nesting for sub-categories of components
+
 import React from 'react';
 import Header from './Header';
 import Filters from './Filters';
@@ -12,18 +15,16 @@ class App extends React.Component {
 
   render() {
     return (
-      <>
-        <Header />
-        <Filters />
-        <ReviewList />
-        <Footer />
-      </>
+      <div id="reviews_container">
+        <div id="reviews_component">
+          <Header />
+          <Filters />
+          <ReviewList />
+          <Footer />
+        </div>
+      </div>
     );
   }
 }
 
 export default App;
-
-{/*
-        <ReviewList />
-         */}
