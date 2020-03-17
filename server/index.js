@@ -1,12 +1,24 @@
 const express = require('express');
 const path = require('path');
-// const Review = require('../database/index.js');
+const db = require('../database/index.js');
 
 const app = express();
 const PORT = 3003;
 
-// Refactor this to query database
-app.get('/', (req, res) => res.send('Hello World!'));
+// Stretch goal: refactor to use query parameters instead
+// of path parameters
+
+// get all reviews for a given restaurant
+app.get('/api/reviews/:restaurantId', (req, res) => {
+  const { restaurantId } = req.params;
+  db.find({ 'restaurant.restaurantId': restaurantId }, (err, data) => {
+    if (err) {
+      res.send(404);
+    } else {
+      res.send(data);
+    }
+  });
+});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
