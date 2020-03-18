@@ -1,0 +1,355 @@
+/* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain) */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio,video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none;
+} blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } table { border-collapse: collapse; border-spacing: 0; }
+
+/*------------------- My CSS -------------------*/
+
+/* Stretch goal 1: Improve precision of my ID names*/
+/* Stretch goal 2: Make component comment demarcations
+more visually appealing*/
+/* Stretch goal 3: Account for window-resizing/mobile*/
+/* Stretch goal 4: Refactor to more closely resemble class
+structure/names of emulated site*/
+
+body {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-family: ''DM Sans', sans-serif';
+  font-size: medium;
+  color: #2c2c2c;
+  background-color: #f2f2f2;
+  -webkit-font-smoothing: antialisased;
+}
+
+/*----------App Component----------*/
+
+#reviews_container {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+#reviews_component {
+  background-color: #fff;
+  border-radius: 2px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e5e5e5;
+  padding: 16px 25px 25px;
+  margin-bottom: 24px;
+}
+
+/*-----Header Component-----*/
+
+#reviews_header {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+#reviews_header_title {
+  display: flex;
+  padding: 0 0 12px;
+  display: flex;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 32px;
+  color: #000a12;
+  border-width: 0 0 1px;
+}
+
+#reviews_header_title_text {
+  display: block;
+  flex-grow: 1;
+  margin: 0 5px 0 0;
+  padding: 0;
+}
+
+#reviews_header_count {
+  padding-left: 12px;
+  color: #767676;
+}
+
+#reviews_header_button {
+  display: inline-block;
+  background-clip: padding-box;
+  background-color: #000;
+  border-color: #000;
+  border-radius: 3px;
+  color: #fff;
+  float: right;
+  -webkit-appearance: none;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+}
+
+/*-----Filters Component-----*/
+
+/*-----ReviewList Component-----*/
+#reviews_review_list {
+  margin: 0;
+  padding: 0;
+}
+
+/*---Review Component---*/
+
+.review_container {
+  border-top: 1px solid #e5e5e5;
+}
+
+/*Looks like I wrote these in error, but not sure so keeping for now*/
+/* .reviews_review {
+  border-top-width: 0;
+}
+
+.reviews_review_each {
+  border-top-width: 1px;
+}
+
+.reviews_review_each_holder {
+  border-top-width: 0;
+} */
+
+.review_content {
+  border-top-width: 0;
+  position: relative;
+  overflow: visible;
+  margin: 8px 0 4px;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.member_info {
+  display: block;
+  margin: 0;
+  min-width: 100px;
+  width: 16.66666667%;
+  padding: 8px 0;
+}
+
+.member_column_info {
+  padding: 0;
+  min-width: 0;
+}
+
+.memberOverlayLink {
+  cursor: pointer;
+}
+
+.member_avatar {
+  margin-bottom: 10px;
+}
+
+.avatar_wrapper {
+  height: 80px;
+  margin: 0;
+}
+
+/* .avatar_link {
+  height: auto;
+  width: auto;
+} */
+
+.avatar_holder {
+  margin: 0 auto;
+  width: 72px;
+  height: 72px;
+  border-radius: 72%;
+  overflow: hidden;
+}
+
+.avatar_image {
+  width: 100%!important;
+  height: 100%!important;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.info_text {
+  padding: 0 8px;
+  flex-direction: column;
+  font-size: 11px;
+  justify-content: center;
+  margin: 0;
+  overflow: hidden;
+  text-align: center;
+  height: inherit;
+  vertical-align: top;
+  color: #4a4a4a;
+  text-overflow: ellipsis;
+}
+
+.reviews_member_info_text_content {
+  padding: 0;
+}
+
+.badging {
+  width: 100%;
+  display: inline-block;
+  line-height: 16px;
+}
+
+.column_content {
+  padding: 8px 0;
+  display: block;
+  width: 75%;
+}
+
+/*-Note to self: Check back here to better understand
+::before and ::after-*/
+.bubbles {
+  display: inline-block;
+  margin: 1px 8px 9 1 px;
+  position: relative;
+}
+
+.date_ago {
+  color: #4a4a4a;
+  font-size: 12px;
+  padding-right: 9px;
+}
+
+/*-Stretch goal: comb through around here and refactor to
+refine nesting and reduce redundancy-*/
+.viaMobile {
+  cursor: pointer;
+  font-size: 12px;
+  padding-left: 13px;
+  white-space: nowrap;
+  color: #4a4a4a
+}
+
+.viaMobile_image {
+  color: #000;
+  font-size: 18px;
+  position: absolute;
+  left: -4px;
+  top: -4px;
+  white-space: nowrap;
+}
+
+.title_area {
+  text-align: left;
+  margin: 8px 0 0;
+  padding: 0;
+}
+
+.title_text {
+  cursor: pointer;
+  margin: 0 0 8px;
+  font-size: 20px;
+  color: #000a12;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.review_body {
+  margin: 0;
+  padding: 0;
+}
+
+.review_body_entry {
+  font-size: 14px;
+  line-height: 20px;
+  color: #4a4a4a;
+  padding: 0;
+}
+
+/*-Note to self: Would it be better to have this for p tag?-*/
+.review_body_entry_text {
+  word-wrap: break-word;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.stay_date {
+  font-size: 14px;
+  color: #4a4a4a;
+  margin: 0;
+  padding: 0;
+}
+
+.stay_date_label {
+  margin: 12px 0 0;
+  display: inline-block;
+  color: #000a12;
+  font-weight: 700;
+}
+
+.vote_line {
+  width: 111%;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.report_area {
+  width: auto;
+  float: right;
+  font-size: 12px;
+  padding-top: 3px;
+  height: 16px;
+}
+
+.reviews_report_icon {
+  color: #000;
+  font-size: 16px;
+  line-height: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-right: 16px;
+}
+
+/*-Note to self: Might need a ::before here-*/
+
+.helpful_area {
+  overflow: visible;
+  float: none;
+  margin: 0;
+  overflow: visible;
+  padding: 0;
+}
+
+.isHelpful {
+  font-size: 12px;
+  margin: 4px 8px 0 0;
+  color: #4a4a4a;
+  line-height: normal;
+  float: left;
+}
+
+.thankButton {
+  height: 20px;
+  padding: 0 6px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  display: inline-block;
+  background-color: #fff;
+  color: #4a4a4a;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.thumbsIcon {
+  font-size: 14px;
+  height: auto;
+  line-height: 19px;
+  margin-right: 4px;
+  margin-left: 5px;
+  color: #000;
+}
+
+/*-Note to self: Might want to check back on inheritance with
+.helpful_text-*/
+/*-Note to self: Check ont buttonShade class here w/ img tag-*/
+
+/*-----Footer Component-----*/
