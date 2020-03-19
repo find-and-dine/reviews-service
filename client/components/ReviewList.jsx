@@ -10,9 +10,18 @@ class ReviewList extends React.Component {
   render() {
     return (
       <div id="reviews_review_list">
-        <ul>
+
           <Review />
-        </ul>
+          <Review />
+          <Review />
+          <Review />
+          <Review />
+          <Review />
+          <Review />
+          <Review />
+          <Review />
+          <Review />
+
       </div>
     );
   }

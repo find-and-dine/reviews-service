@@ -10,7 +10,7 @@ class Review extends React.Component {
   // TO DO: There's something wacky going on with my badging element. Need to fix its styles.
   render() {
     return (
-      <li className="review_container">
+      <div className="review_container">
         <div className="review_content">
 
           <div className="member_info">
@@ -45,10 +45,6 @@ class Review extends React.Component {
 
             <span className="bubbles">00000 </span>
             <span className="date_ago"> Reviewed 3 days ago </span>
-            <span className="viaMobile">
-              <span className="viaMobile_image">Icon using ::before </span>
-               via Mobile
-            </span>
 
             <div className="title_area">
               <a href="https://www.tripadvisor.com/ShowUserReviews-g60878-d463486-r751001017-The_Pink_Door-Seattle_Washington.html" className="title_text">
@@ -65,7 +61,7 @@ class Review extends React.Component {
             </div>
 
             <div className="stay_date">
-              <span className="stay_date_label">Date of Visit</span> March 2020
+              <span className="stay_date_label">Date of Visit:</span> March 2020
             </div>
 
             <div className="vote_line">
@@ -91,7 +87,7 @@ class Review extends React.Component {
           </div>
 
         </div>
-      </li>
+      </div>
     );
   }
 }
