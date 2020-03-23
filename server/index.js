@@ -10,7 +10,7 @@ const PORT = 3003;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/', express.static(path.resolve(__dirname, '..', 'public')));
+app.use('/:restaurantId', express.static(path.resolve(__dirname, '..', 'public')));
 
 // get all reviews for a given restaurant
 app.get('/api/reviews/:restaurantId', (req, res) => {

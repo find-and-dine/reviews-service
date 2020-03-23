@@ -14,12 +14,13 @@ class App extends React.Component {
       allReviews: [],
       filteredReviews: [],
       displayedReviews: [],
-      restaurantId: 4,
+      restaurantId: null,
     };
   }
 
   componentDidMount() {
-    fetch(`/api/reviews/4/`)
+    const { restaurantId } = this.props;
+    fetch(`/api/reviews/${restaurantId}/`)
       .then((data) => data.json())
       .then((reviews) => {
         this.setState({
