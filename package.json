@@ -10,7 +10,8 @@
     "start": "nodemon server/index.js",
     "build": "webpack -d --watch",
     "seed": "node database/seed.js",
-    "lint": "eslint ."
+    "lint": "eslint src/**/*.hs src/**/*.jsx",
+    "test": "jest --coverage"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -31,9 +32,12 @@
     "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
     "babel-core": "^6.26.3",
+    "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
@@ -42,8 +46,10 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^1.7.0",
+    "jest": "^25.1.0",
     "nodemon": "^2.0.2",
     "react": "^16.13.0",
+    "react-test-renderer": "^16.13.1",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11"
   },
@@ -52,6 +58,11 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/guilttripadvisors/reviews-service.git"
+  },
+  "jest": {
+    "setupFiles": [
+      "./test/setup.js"
+    ]
   },
   "bugs": {
     "url": "https://github.com/guilttripadvisors/reviews-service/issues"

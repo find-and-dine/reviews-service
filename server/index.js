@@ -8,6 +8,10 @@ const PORT = 3003;
 // Stretch goal: refactor to use query parameters instead
 // of path parameters
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use('/', express.static(path.resolve(__dirname, '..', 'public')));
+
 // get all reviews for a given restaurant
 app.get('/api/reviews/:restaurantId', (req, res) => {
   const { restaurantId } = req.params;
@@ -19,9 +23,5 @@ app.get('/api/reviews/:restaurantId', (req, res) => {
     }
   });
 });
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use('/', express.static(path.resolve(__dirname, '..', 'public')));
 
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));

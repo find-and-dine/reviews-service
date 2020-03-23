@@ -24,7 +24,6 @@ const reviewSchema = new mongoose.Schema({
     avatarURL: String,
     reviewsCount: Number,
     postsCount: Number,
-    helpfulVotesCount: Number,
     location: String,
     level: Number,
   },
@@ -41,8 +40,8 @@ const reviewSchema = new mongoose.Schema({
   serviceRating: Number,
   foodRating: Number,
   valueRating: Number,
+  helpfulVotesCount: Number,
 });
-
 
 const Review = mongoose.model('Review', reviewSchema);
 

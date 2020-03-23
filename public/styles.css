@@ -30,6 +30,7 @@ body {
 #reviews_container {
   margin-bottom: 20px;
   position: relative;
+  width: 750px;
 }
 
 #reviews_component {
@@ -91,11 +92,188 @@ body {
 }
 
 /*-----Filters Component-----*/
+.temp {
+  max-width: 698px;
+
+}
+
+ #filtersBox {
+  height: 100%;
+  margin: 0 0 9px;
+  padding: 0;
+  display: block;
+}
+
+#filtersContent {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+#categoriesBox {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+#filterColumnsBox {
+  position: static;
+  overflow: inherit;
+  padding: 0;
+  top: 66px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  margin: 0 -12px;
+  box-sizing: border-box;
+}
+
+/*-Note to self: Refactor to reduce redundancy-*/
+#categoriesContent {
+  height: 100px;
+  margin-bottom: 0 0 9px;
+  padding: 0;
+  display: block;
+}
+
+#columnBox {
+  position: static;
+  overflow: inherit;
+  padding: 0;
+  top: 66px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  dislay: flex;
+  margin: 0 -12px;
+  box-sizing: border-box;
+}
+
+#ratingBox {
+  color: #4a4a4a;
+  font-size: 12px;
+  max-height: 98%;
+  padding-bottom: 6px;
+  -webkit-box-flex: 0;
+  flex: none;
+  /* width: 41.66666667%; */
+  display: block;
+  padding: 12px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.node-preserve {
+  margin: 0;
+  padding: 0;
+  display: block;
+  color: #4a4a4a;
+  font-size: 12px;
+}
+
+.filterHeader {
+  padding: 16px 0 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  position: relative;
+  color: #000a12;
+  margin: 0;
+  display: block;
+}
+
+#contentBox {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+#optionBox {
+  display: table;
+  width: 100%;
+  border-spacing: 0 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.checkBoxItem {
+  display: table-row;
+  padding: 6px 0 12px;
+  position: relative;
+  margin: 0;
+  border-spacing: 0 12px;
+  color: #4a4a4a;
+  font-size: 12px;
+}
+
+.choiceLabel {
+  display: table-cell;
+  white-space: nowrap;
+  padding: 0 12px 6px 24px;
+  vertical-align: middle;
+  cursor: pointer;
+  box-sizing: content-box;
+  position: relative;
+}
+
+.rowBarCell {
+  display: table-cell;
+  width: 100%;
+}
+
+.rowBarCellContent {
+  background: #e5e5e5 none repeat scroll 0 0;
+  display: inline-block;
+  height: 12px;
+  position: relative;
+  width: 100%;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.rowFill {
+  width: 66.11151339608979%;
+  background: #000 none repeat scroll 0 0;
+  display: inline-block;
+  height: 100%;
+  border-radius: 2px;
+}
+
+.ratingCount {
+  padding-left: 8px;
+}
+
+.narrowCol {
+  color: #4a4a4a;
+  font-size: 12px;
+  max-height: 98%;
+  padding-bottom: 6px;
+  -webkit-box-flex: 0;
+  flex: none;
+  width: 16.66666667%;
+  padding: 12px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+#languageBox {
+  color: #4a4a4a;
+  font-size: 12px;
+  -webkit-box-flex: 0;
+  flex: none;
+  width: 25%;
+  display: block;
+  padding: 12px;
+  box-sizing: border-box;
+  margin: 0;
+} */
 
 /*-----ReviewList Component-----*/
 #reviews_review_list {
   margin: 0;
-  padding: 0;
+  padding: 12px 12px 6px;
+  box-sizing: border-box;
 }
 
 /*---Review Component---*/
@@ -187,8 +365,9 @@ body {
   text-overflow: ellipsis;
 }
 
-.reviews_member_info_text_content {
+.info_text_content {
   padding: 0;
+  text-align: center;
 }
 
 .badging {
@@ -207,8 +386,13 @@ body {
 ::before and ::after-*/
 .bubbles {
   display: inline-block;
-  margin: 1px 8px 9 1 px;
+  margin: 1px 8px 0 1px;
   position: relative;
+  color: #00aa6c;
+  font-weight: 400;
+  font-size: inherit;
+  font-variant: normal;
+  font-style: normal;
 }
 
 .date_ago {
@@ -300,7 +484,7 @@ refine nesting and reduce redundancy-*/
   height: 16px;
 }
 
-.reviews_report_icon {
+.report_icon {
   color: #000;
   font-size: 16px;
   line-height: 12px;
@@ -348,8 +532,137 @@ refine nesting and reduce redundancy-*/
   color: #000;
 }
 
+#thumbs {
+  width: 15px;
+}
+
+.more {
+  cursor: pointer;
+  font-weight: 700;
+}
+
 /*-Note to self: Might want to check back on inheritance with
 .helpful_text-*/
-/*-Note to self: Check ont buttonShade class here w/ img tag-*/
+/*-Note to self: Check on buttonShade class here w/ img tag-*/
 
 /*-----Footer Component-----*/
+
+#footer {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+#pagination {
+  border-width: 1px 0 0;
+  border-style: solid;
+  border-color: #e5e5e5;
+  padding: 12px 10px;
+  overflow: hidden;
+  background-color: #fff;
+  text-align: center;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/*-Note to self: Some of this can be refactored to address redundancy; consider breaking into subclasses, e.g. a button class-*/
+
+#previousButton {
+  float: left;
+  display: inline-block;
+  pointer-events: none;
+  border-color: #000;
+  color: #000;
+  cursor: auto;
+  border-radius: 3px;
+  background-color: #fff;
+  -webkit-appearance: none;
+  position: relative;
+  padding: 8px 16px;
+  font-weight: 700;
+  font-family: inherit;
+  border: 1px solid #000;
+  background-clip: padding-box;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-font-smoothing: antialisased;
+  opacity: .32;
+  width: 85px;
+}
+
+#nextButton {
+  float: right;
+  background-color: #000;
+  border-color: #000;
+  border-radius: 3px;
+  color: #fff;
+  position: relative;
+  -webkit-appearance: none;
+  display: inline-block;
+  padding: 8px 16px;
+  font-weight: 700;
+  font-family: inherit;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  cursor: pointer;
+  width: 85px;
+}
+
+/* #pageNumbers {
+  display: inline-block;
+  padding-top: 3px;
+  margin: 0;
+  padding: 0;
+} */
+
+/*-Note to self: Page list should be subcomponent so as to more elegantly handle dynamic logic/rendering*/
+/*-TO DO: Improve CSS for page numbers; this is very bare bones and does not support all functionality-*/
+
+.page_number_selected {
+  color: #000;
+  background-color: #f2f2f2;
+  border-color: #f2f2f2;
+  cursor: default;
+  line-height: 40px;
+  height: 40px;
+  width: 40px;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  display: inline-block;
+  border-radius: 2px;
+  text-decoration: none;
+}
+
+.page_number {
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+  line-height: 40px;
+  height: 40px;
+  width: 40px;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+#pageSeparator {
+  width: 32px;
+  line-height: 30px;
+  color: #767676;
+  text-decoration: none;
+  text-align: center;
+  -webkit-font-smoothing: antialisased;
+  font-size: medium;
+}

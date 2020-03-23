@@ -3,12 +3,84 @@ import React from 'react';
 class Review extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { var: 3 };
+    const { review } = this.props;
+    this.state = {
+      review,
+    };
   }
 
   // Stretch goal: Refactor into smaller React components
-  // TO DO: There's something wacky going on with my badging element. Need to fix its styles.
+  // TO DO: There's something wacky going on with my badging element. Need to fix its styles. + Lots of cleaning up details.
   render() {
+
+    const bubble = (rating) => {
+      let bubbles = '';
+      for(var i = 0; i < rating; i++) {
+        bubbles += '\u2B24 ';
+      }
+      for (let x = i; x < 5; x++) {
+        bubbles += '\u25EF ';
+      }
+      console.log(bubbles);
+      return bubbles;
+    }
+
+    const content = (body) => {
+      let words = body.split(' ');
+
+      if(words.length <= 45) {
+        return body;
+      }
+
+      let text = words[0];
+      for (let i = 1; i < 45; i++){
+        text += ' ' + words[i];
+      }
+
+      return (
+        <>
+          {text}... <span className="more">More</span>
+        </>
+      );
+    }
+
+    const ago = (reviewedDate) => {
+      const milliAgo = new Date() - new Date(reviewedDate);
+      let numUnits = null;
+      let unit = ''
+
+      if(milliAgo >= (1000 * 60 * 60 * 24 * 7 * 4 * 12)) { // years
+        numUnits = Math.floor(milliAgo / (1000 * 60 * 60 * 24 * 7 * 4 * 12));
+        unit = 'year';
+      } else if(milliAgo >= (1000 * 60 * 60 * 24 * 7 * 4)) { // months
+        numUnits = Math.floor(milliAgo / (1000 * 60 * 60 * 24 * 7 * 4));
+        unit = 'month';
+      } else if(milliAgo >= (1000 * 60 * 60 * 24 * 7)) { // weeks
+        numUnits = Math.floor(milliAgo / (1000 * 60 * 60 * 24 * 7));
+        unit = 'week';
+      } else if(milliAgo >= (1000 * 60 * 60 * 24)) { // days
+        numUnits = Math.floor(milliAgo / (1000 * 60 * 60 * 24));
+        unit = 'day';
+      } else if(milliAgo >= (1000 * 60 * 60)) { // hours
+        numUnits = Math.floor(milliAgo / (1000 * 60 * 60));
+        unit = 'hour';
+      } else if(milliAgo >= (1000 * 60)) { // minutes
+        numUnits = Math.floor(milliAgo / (1000 * 60));
+        unit = 'minute';
+      } else {  // seconds
+        numUnits = Math.floor(milliAgo / 1000);
+        unit = 'second';
+      }
+
+      if(numUnits > 1) {
+        return numUnits + ' ' + unit + 's ';
+      } else {
+        return numUnits + ' ' + unit + ' ';
+      }
+    }
+
+    // change key for className="review_body_entry_text"; it's currently written to facilitate a test that should be refactored
+    // same with className="bubbles" and "date_ago"
     return (
       <div className="review_container">
         <div className="review_content">
@@ -21,21 +93,21 @@ class Review extends React.Component {
                 <div className="member_avatar">
                   <div className="avatar_wrapper">
                     <div className="avatar_holder">
-                      <img className="avatar_image" src="https://media-cdn.tripadvisor.com/media/photo-l/03/33/14/0c/facebook-avatar.jpg" />
+                      <img className="avatar_image" src={this.props.review ? this.props.review.user.avatarURL : ''} />
                     </div>
                   </div>
                 </div>
 
                 <div className="info_text">
                   <div className="info_text_content">
-                    yayymichela
+                    {this.props.review ? this.props.review.user.name : ''}
                   </div>
                 </div>
 
               </div>
 
-              <div className="memberOverlayLink badging info_text">
-                5 reviews
+              <div className="info_text">
+                {this.props.review ? this.props.review.user.reviewsCount : ''} reviews
               </div>
 
             </div>
@@ -43,31 +115,33 @@ class Review extends React.Component {
 
           <div className="column_content">
 
-            <span className="bubbles">00000 </span>
-            <span className="date_ago"> Reviewed 3 days ago </span>
+            <span key={this.props.review ? this.props.review.rating + "bubble": 0} className="bubbles">{this.props.review ? '' + bubble(this.props.review.rating) : ''} </span>
+            <span key={this.props.review ? this.props.review.hereFor : ''} className="date_ago"> Reviewed {this.props.review ? ago(this.props.review.timePosted) : ''}ago</span>
 
             <div className="title_area">
               <a href="https://www.tripadvisor.com/ShowUserReviews-g60878-d463486-r751001017-The_Pink_Door-Seattle_Washington.html" className="title_text">
-                <span>Perfect Dinner Experience</span>
+                <span>
+                  {this.props.review ? this.props.review.title : ''}
+                </span>
               </a>
             </div>
 
             <div className="review_body">
               <div className="review_body_entry">
-                <div className="review_body_entry_text">
-                  I am so glad we got to go before they temporarily closed down. For our one dinner in Seattle, we chose The Pink Door. I cannot recommend it more. The atmosphere was adorable, the food was delicious and the wine was amazing. Everything was perfect!
+                <div key={this.props.review ? this.props.review.title : ''}className="review_body_entry_text">
+                    {this.props.review ? content(this.props.review.body) : ''}
                 </div>
               </div>
             </div>
 
             <div className="stay_date">
-              <span className="stay_date_label">Date of Visit:</span> March 2020
+              <span className="stay_date_label">Date of Visit:</span> {this.props.review ? this.props.review.monthVisited : ''}
             </div>
 
             <div className="vote_line">
 
               <div className="report_area">
-                <span className="report_icon">flag</span>
+                <span className="report_icon">&#x2691;</span>
               </div>
 
               <div className="helpful_area">
@@ -76,7 +150,7 @@ class Review extends React.Component {
 
                 <span className="thankButton">
                   <span className="helpful_text">
-                    <span className="thumbsIcon">thumbs</span>
+                    <span className="thumbsIcon"><img id="thumbs" src="https://i.imgur.com/go45qVr.png" /> {this.props.review ? this.props.review.helpfulVotesCount : ''} </span>
                   </span>
                 </span>
 

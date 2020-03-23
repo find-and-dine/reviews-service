@@ -10,17 +10,32 @@ import Footer from './Footer';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { var: 3};
+    this.state = {
+      allReviews: [],
+      filteredReviews: [],
+      displayedReviews: [],
+      restaurantId: 4,
+    };
+  }
+
+  componentDidMount() {
+    fetch(`/api/reviews/4/`)
+      .then((data) => data.json())
+      .then((reviews) => {
+        this.setState({
+          allReviews: reviews,
+        });
+      });
   }
 
   render() {
     return (
       <div id="reviews_container">
         <div id="reviews_component">
-          <Header />
+          <Header count={this.state.allReviews.length} />
           <Filters />
-          <ReviewList />
-          <Footer />
+          <ReviewList reviews={this.state.allReviews}/>
+          <Footer count={this.state.allReviews.length}/>
         </div>
       </div>
     );

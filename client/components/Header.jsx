@@ -3,7 +3,10 @@ import React from 'react';
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { var: 3 };
+    const { count } = this.props;
+    this.state = {
+      count,
+    };
   }
 
   render() {
@@ -14,7 +17,7 @@ class Header extends React.Component {
           <span id="reviews_header_title_text">
             Reviews
             <span id="reviews_header_count">
-              50
+              {this.props.count}
             </span>
           </span>
 
