@@ -8,6 +8,7 @@ class Footer extends React.Component {
     };
   }
 
+  // TO DO: Refactor to reduce divs
   // TO DO: Refactor pageNumber into subcomponent with more elegant logic
   // TO DO: Implement functionality of pagination
   render() {

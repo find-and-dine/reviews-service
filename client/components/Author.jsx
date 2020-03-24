@@ -1,7 +1,7 @@
 import React from 'react';
 
 // TO DO: Make member_badge a subcomponent
-// TO DO: Fix line-spacing
+// TO DO: Build out additional features
 function Author(props) {
   return (
     <div className="author_column">

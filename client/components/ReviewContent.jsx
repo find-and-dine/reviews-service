@@ -83,8 +83,9 @@ class ReviewContent extends React.Component {
       return numUnits;
     }
 
-    // TO DO: Refactor keys -- current vals don't make much sense
+    // TO DO: Finish refactoring to reduce divs
     // TO DO: Break into smaller subcomponents
+    // TO DO: Refactor keys -- current vals don't make much sense
     // TO DO: Build out additional features
     return (
 
@@ -111,15 +112,12 @@ class ReviewContent extends React.Component {
           </div>
         </div>
 
-      <div className="stay_date">
-        <span className="stay_date_label">Date of Visit:</span> {this.props.review ? this.props.review.monthVisited : ''}
+      <div className="date_visited">
+        <span className="date_visited_label">Date of Visit:</span> {this.props.review ? this.props.review.monthVisited : ''}
       </div>
 
       <div className="vote_line">
-
-        <div className="report_area">
-          <span className="report_icon">&#x2691;</span>
-        </div>
+        <span className="flag">&#x2691;</span>
 
         <div className="helpful_area">
 

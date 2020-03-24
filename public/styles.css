@@ -5,14 +5,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none;
 } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } table { border-collapse: collapse; border-spacing: 0; }
 
-/*------------------- My CSS -------------------*/
+/*-TO DO: Refactor to address any redundancy-*/
 
-/* Stretch goal 1: Improve precision of my ID names*/
-/* Stretch goal 2: Make component comment demarcations
-more visually appealing*/
-/* Stretch goal 3: Account for window-resizing/mobile*/
-/* Stretch goal 4: Refactor to more closely resemble class
-structure/names of emulated site*/
+/*------------------- My CSS -------------------*/
 
 body {
   background-color: #f2f2f2;
@@ -86,181 +81,9 @@ a {
 
 /*-----Filters Component-----*/
 
-.temp {
+ .temp {
   max-width: 698px;
 }
-
- #filtersBox {
-  height: 100%;
-  margin: 0 0 9px;
-  padding: 0;
-  display: block;
-}
-
-#filtersContent {
-  margin: 0;
-  padding: 0;
-  display: block;
-}
-
-#categoriesBox {
-  margin: 0;
-  padding: 0;
-  display: block;
-}
-
-#filterColumnsBox {
-  position: static;
-  overflow: inherit;
-  padding: 0;
-  top: 66px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  margin: 0 -12px;
-  box-sizing: border-box;
-}
-
-/*-Note to self: Refactor to reduce redundancy-*/
-#categoriesContent {
-  height: 100px;
-  margin-bottom: 0 0 9px;
-  padding: 0;
-  display: block;
-}
-
-#columnBox {
-  position: static;
-  overflow: inherit;
-  padding: 0;
-  top: 66px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  dislay: flex;
-  margin: 0 -12px;
-  box-sizing: border-box;
-}
-
-#ratingBox {
-  color: #4a4a4a;
-  font-size: 12px;
-  max-height: 98%;
-  padding-bottom: 6px;
-  -webkit-box-flex: 0;
-  flex: none;
-  /* width: 41.66666667%; */
-  display: block;
-  padding: 12px;
-  box-sizing: border-box;
-  margin: 0;
-}
-
-.node-preserve {
-  margin: 0;
-  padding: 0;
-  display: block;
-  color: #4a4a4a;
-  font-size: 12px;
-}
-
-.filterHeader {
-  padding: 16px 0 0;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 18px;
-  position: relative;
-  color: #000a12;
-  margin: 0;
-  display: block;
-}
-
-#contentBox {
-  margin: 0;
-  padding: 0;
-  display: block;
-}
-
-#optionBox {
-  display: table;
-  width: 100%;
-  border-spacing: 0 12px;
-  margin: 0;
-  padding: 0;
-}
-
-.checkBoxItem {
-  display: table-row;
-  padding: 6px 0 12px;
-  position: relative;
-  margin: 0;
-  border-spacing: 0 12px;
-  color: #4a4a4a;
-  font-size: 12px;
-}
-
-.choiceLabel {
-  display: table-cell;
-  white-space: nowrap;
-  padding: 0 12px 6px 24px;
-  vertical-align: middle;
-  cursor: pointer;
-  box-sizing: content-box;
-  position: relative;
-}
-
-.rowBarCell {
-  display: table-cell;
-  width: 100%;
-}
-
-.rowBarCellContent {
-  background: #e5e5e5 none repeat scroll 0 0;
-  display: inline-block;
-  height: 12px;
-  position: relative;
-  width: 100%;
-  border-radius: 2px;
-  cursor: pointer;
-}
-
-.rowFill {
-  width: 66.11151339608979%;
-  background: #000 none repeat scroll 0 0;
-  display: inline-block;
-  height: 100%;
-  border-radius: 2px;
-}
-
-.ratingCount {
-  padding-left: 8px;
-}
-
-.narrowCol {
-  color: #4a4a4a;
-  font-size: 12px;
-  max-height: 98%;
-  padding-bottom: 6px;
-  -webkit-box-flex: 0;
-  flex: none;
-  width: 16.66666667%;
-  padding: 12px;
-  box-sizing: border-box;
-  margin: 0;
-}
-
-#languageBox {
-  color: #4a4a4a;
-  font-size: 12px;
-  -webkit-box-flex: 0;
-  flex: none;
-  width: 25%;
-  display: block;
-  padding: 12px;
-  box-sizing: border-box;
-  margin: 0;
-} */
 
 /*---Review Component---*/
 
@@ -339,11 +162,7 @@ a {
   text-align: center;
 }
 
-.badge_text {
-
-}
-
-/*---AuthorContent Component---*/
+/*---ReviewContent Component---*/
 
 #review_content {
   box-sizing: border-box;
@@ -390,31 +209,19 @@ a {
   overflow-wrap: break-word;
 }
 
-.review_body_entry {
-  font-size: 14px;
-  line-height: 20px;
-  color: #4a4a4a;
-  padding: 0;
+.more {
+  cursor: pointer;
+  font-weight: 700;
 }
 
-/*-Note to self: Would it be better to have this for p tag?-*/
-.review_body_entry_text {
-  word-wrap: break-word;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-}
-
-.stay_date {
+.date_visited {
+  display: block;
   font-size: 14px;
   color: #4a4a4a;
-  margin: 0;
-  padding: 0;
 }
 
-.stay_date_label {
-  margin: 12px 0 0;
+.date_visited_label {
+  margin-top: 12px;
   display: inline-block;
   color: #000a12;
   font-weight: 700;
@@ -426,15 +233,11 @@ a {
   margin-top: 12px;
 }
 
-.report_area {
+.flag {
   width: auto;
   float: right;
-  font-size: 12px;
   padding-top: 3px;
   height: 16px;
-}
-
-.report_icon {
   color: #000;
   font-size: 16px;
   line-height: 12px;
@@ -484,11 +287,6 @@ a {
 
 #thumbs {
   width: 15px;
-}
-
-.more {
-  cursor: pointer;
-  font-weight: 700;
 }
 
 /*-Note to self: Might want to check back on inheritance with
