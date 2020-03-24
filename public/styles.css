@@ -344,17 +344,19 @@ a {
 
 /*---AuthorContent Component---*/
 
-/*-Note to self: Check back here to better understand
-::before and ::after-*/
+#review_content {
+  box-sizing: border-box;
+  display: block;
+  flex-basis: auto;
+  padding: 8px 0;
+  width: 75%;
+}
+
 .bubbles {
-  display: inline-block;
   margin: 1px 8px 0 1px;
+  display: inline-block;
   position: relative;
   color: #00aa6c;
-  font-weight: 400;
-  font-size: inherit;
-  font-variant: normal;
-  font-style: normal;
 }
 
 .date_ago {

@@ -85,7 +85,7 @@ class ReviewContent extends React.Component {
 
     return (
 
-      <div className="column_content">
+      <div id="review_content">
 
       <span key={this.props.review ? this.props.review.rating + 'bubble': 0} className="bubbles">{this.props.review ? '' + bubble(this.props.review.rating) : ''} </span>
       <span key={this.props.review ? this.props.review.hereFor : ''} className="date_ago"> Reviewed {this.props.review ? ago(this.props.review.timePosted) : ''}ago</span>
