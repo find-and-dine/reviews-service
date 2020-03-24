@@ -15,86 +15,79 @@ more visually appealing*/
 structure/names of emulated site*/
 
 body {
-  display: block;
-  margin: 0;
-  padding: 0;
+  background-color: #f2f2f2;
   font-family: ''DM Sans', sans-serif';
   font-size: medium;
-  color: #2c2c2c;
-  background-color: #f2f2f2;
-  -webkit-font-smoothing: antialisased;
+}
+
+a {
+  text-decoration: inherit;
 }
 
 /*----------App Component----------*/
 
-#reviews_container {
-  margin-bottom: 20px;
+#reviews {
+  margin-bottom: 24px;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  padding: 16px 24px 24px;
+  background-color: #fff;
+  width: auto;
+  max-width: 763px;
   position: relative;
   width: 750px;
+  display: block;
+  box-sizing: border-box;
 }
 
-#reviews_component {
-  background-color: #fff;
-  border-radius: 2px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #e5e5e5;
-  padding: 16px 25px 25px;
-  margin-bottom: 24px;
+/*-----Reusable Classes-----*/
+
+.primary_button {
+  background-clip: padding-box;
+  background-color: #000;
+  border: 1px solid #000;
+  display: blocl;
+  position: relative;
+  text-align: center;
+  float: right;
+  font-size: 14px;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 16px;
+  line-height: 18px;
+}
+
+.secondary_button {
+
 }
 
 /*-----Header Component-----*/
 
-#reviews_header {
-  display: block;
-  margin: 0;
-  padding: 0;
-}
-
-#reviews_header_title {
+#header {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 12px;
   display: flex;
-  padding: 0 0 12px;
-  display: flex;
-  font-size: 28px;
   font-weight: 700;
+  font-size: 28px;
   line-height: 32px;
   color: #000a12;
-  border-width: 0 0 1px;
 }
 
-#reviews_header_title_text {
-  display: block;
+#title_text {
   flex-grow: 1;
-  margin: 0 5px 0 0;
-  padding: 0;
+  margin-right: 5px;
 }
 
-#reviews_header_count {
+#all_reviews_count {
   padding-left: 12px;
   color: #767676;
 }
 
-#reviews_header_button {
-  display: inline-block;
-  background-clip: padding-box;
-  background-color: #000;
-  border-color: #000;
-  border-radius: 3px;
-  color: #fff;
-  float: right;
-  -webkit-appearance: none;
-  padding: 8px 16px;
-  border: 1px solid transparent;
-  box-sizing: border-box;
-  font-size: 14px;
-  line-height: 18px;
-  text-align: center;
-}
-
 /*-----Filters Component-----*/
+
 .temp {
   max-width: 698px;
-
 }
 
  #filtersBox {
@@ -270,7 +263,7 @@ body {
 } */
 
 /*-----ReviewList Component-----*/
-#reviews_review_list {
+#review_list {
   margin: 0;
   padding: 12px 12px 6px;
   box-sizing: border-box;

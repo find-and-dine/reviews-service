@@ -32,8 +32,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id="reviews_container">
-        <div id="reviews_component">
+      <div>
+        <div id="reviews">
           <Header count={this.state.allReviews.length} />
           <Filters />
           <ReviewList reviews={this.state.allReviews} />
