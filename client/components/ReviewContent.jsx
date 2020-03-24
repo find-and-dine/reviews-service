@@ -1,7 +1,5 @@
 import React from 'react';
 
-// TO DO: Break into smaller subcomponents
-
 class ReviewContent extends React.Component {
   constructor(props) {
     super(props);
@@ -13,6 +11,8 @@ class ReviewContent extends React.Component {
 
   render() {
 
+    // TO DO: Find a slightly smaller circle char to use
+    // TO DO: Refactor helper functions to condense
     const bubble = (rating) => {
       let bubbles = '';
       let i = 0;
@@ -83,28 +83,33 @@ class ReviewContent extends React.Component {
       return numUnits;
     }
 
+    // TO DO: Refactor keys -- current vals don't make much sense
+    // TO DO: Break into smaller subcomponents
+    // TO DO: Build out additional features
     return (
 
       <div id="review_content">
 
-      <span key={this.props.review ? this.props.review.rating + 'bubble': 0} className="bubbles">{this.props.review ? '' + bubble(this.props.review.rating) : ''} </span>
-      <span key={this.props.review ? this.props.review.hereFor : ''} className="date_ago"> Reviewed {this.props.review ? ago(this.props.review.timePosted) : ''}ago</span>
+        <span key={this.props.review ? this.props.review.rating + 'bubble': 0} className="bubbles">
+          {this.props.review ? '' + bubble(this.props.review.rating) : ''}
+        </span>
+        <span key={this.props.review ? this.props.review.hereFor : ''} className="date_ago">
+          Reviewed {this.props.review ? ago(this.props.review.timePosted) : ''} ago
+        </span>
 
-      <div className="title_area">
-        <a href="https://www.tripadvisor.com/ShowUserReviews-g60878-d463486-r751001017-The_Pink_Door-Seattle_Washington.html" className="title_text">
-          <span>
-            {this.props.review ? this.props.review.title : ''}
-          </span>
-        </a>
-      </div>
+        <div className="review_title">
+          <a href="https://www.tripadvisor.com/ShowUserReviews-g60878-d463486-r751001017-The_Pink_Door-Seattle_Washington.html">
+            <span>
+              {this.props.review ? this.props.review.title : ''}
+            </span>
+          </a>
+        </div>
 
-      <div className="review_body">
-        <div className="review_body_entry">
-          <div key={this.props.review ? this.props.review.title : ''}className="review_body_entry_text">
+        <div className="review_body">
+          <div key={this.props.review ? this.props.review.title : ''}>
               {this.props.review ? content(this.props.review.body) : ''}
           </div>
         </div>
-      </div>
 
       <div className="stay_date">
         <span className="stay_date_label">Date of Visit:</span> {this.props.review ? this.props.review.monthVisited : ''}

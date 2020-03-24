@@ -323,7 +323,8 @@ a {
   padding: 0 8px;
   text-align: center;
   height: inherit;
-  vertical-align: top;
+  font-size: 11px;
+  line-height: inherit;
   justify-content: center;
   color: #4a4a4a;
   text-overflow: ellipsis;
@@ -332,14 +333,14 @@ a {
 .member_badge {
   display: block;
   color: #2c2c2c;
-}
-
-.badge_text {
-  display: inline-block;
-  text-align: center;
   font-size: 11px;
   line-height: 16px;
   color: #4a4a4a;
+  text-align: center;
+}
+
+.badge_text {
+
 }
 
 /*---AuthorContent Component---*/
@@ -365,43 +366,28 @@ a {
   padding-right: 9px;
 }
 
-/*-Stretch goal: comb through around here and refactor to
-refine nesting and reduce redundancy-*/
-.viaMobile {
-  cursor: pointer;
-  font-size: 12px;
-  padding-left: 13px;
-  white-space: nowrap;
-  color: #4a4a4a
-}
-
-.viaMobile_image {
-  color: #000;
-  font-size: 18px;
-  position: absolute;
-  left: -4px;
-  top: -4px;
-  white-space: nowrap;
-}
-
-.title_area {
+.review_title {
+  display: block;
   text-align: left;
   margin: 8px 0 0;
-  padding: 0;
 }
 
-.title_text {
-  cursor: pointer;
-  margin: 0 0 8px;
+.review_title a {
+  margin-bottom: 8px;
   font-size: 20px;
   color: #000a12;
-  font-style: normal;
-  text-decoration: none;
+  cursor: pointer;
 }
 
 .review_body {
-  margin: 0;
-  padding: 0;
+  margin-top: 5px;
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.review_body p {
+  overflow-wrap: break-word;
 }
 
 .review_body_entry {

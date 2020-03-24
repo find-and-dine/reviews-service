@@ -1,6 +1,7 @@
 import React from 'react';
 
 // TO DO: Make member_badge a subcomponent
+// TO DO: Fix line-spacing
 function Author(props) {
   return (
     <div className="author_column">
@@ -13,9 +14,7 @@ function Author(props) {
           {props.review ? props.review.user.name : ''}
         </div>
         <div className="member_badge">
-          <div className="badge_text"></div>
-            {props.review ? props.review.user.reviewsCount : ''}
-                    reviews
+          {props.review ? props.review.user.reviewsCount : ''} reviews
         </div>
       </div>
     </div>
