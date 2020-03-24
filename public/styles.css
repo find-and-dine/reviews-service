@@ -262,31 +262,19 @@ a {
   margin: 0;
 } */
 
-/*-----ReviewList Component-----*/
-#review_list {
-  margin: 0;
-  padding: 12px 12px 6px;
-  box-sizing: border-box;
-}
-
 /*---Review Component---*/
 
 .review_container {
+  display: block;
+}
+
+.review {
   border-top: 1px solid #e5e5e5;
+  margin: 8px 0 4px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: visible;
 }
-
-/*Looks like I wrote these in error, but not sure so keeping for now*/
-/* .reviews_review {
-  border-top-width: 0;
-}
-
-.reviews_review_each {
-  border-top-width: 1px;
-}
-
-.reviews_review_each_holder {
-  border-top-width: 0;
-} */
 
 .review_content {
   border-top-width: 0;

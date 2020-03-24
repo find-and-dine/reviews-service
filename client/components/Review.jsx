@@ -21,12 +21,10 @@ class Review extends React.Component {
     // same with className="bubbles" and "date_ago"
     const { review } = this.props;
     return (
-      <div className="review_container">
-        <div className="review_content">
-
+      <div>
+        <div className="review">
           <Author review={review} />
           <ReviewContent review={review} />
-
         </div>
       </div>
     );
