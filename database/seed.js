@@ -33,16 +33,17 @@ const seed = () => {
           name: faker.name.findName(),
           avatarURL: faker.image.avatar(),
           reviewsCount: Math.floor(Math.random() * 250),
-          postsCount: Math.floor(Math.random() * 500),
+          contributions: Math.floor(Math.random() * 500),
           location: faker.address.city(),
           level: Math.floor(Math.random() * 5),
+          votes: Math.floor(Math.random() * 250),
         },
         title: faker.random.words(),
         body: faker.lorem.paragraphs(),
         timePosted,
         monthVisited: `${faker.date.month()} ${visited.getFullYear()}`,
         hereFor: hereForArr[Math.floor(Math.random() * 11)],
-        votes: Math.floor(Math.random() * 20),
+        votes: Math.floor(Math.random() * 150),
         device: faker.lorem.word(),
         travelerType: travelerTypeArr[Math.floor(Math.random() * 6)],
         lang: faker.lorem.word(),
@@ -50,7 +51,6 @@ const seed = () => {
         serviceRating: Math.floor(Math.random() * 4) + 1,
         foodRating: Math.floor(Math.random() * 4) + 1,
         valueRating: Math.floor(Math.random() * 4) + 1,
-        helpfulVotesCount: Math.floor(Math.random() * 250),
       });
 
       review.save((err) => {
