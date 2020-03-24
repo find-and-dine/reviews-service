@@ -21,7 +21,7 @@ const seed = () => {
     }
     visited = new Date(visited);
     for (let x = 0; x < reviewNum; x += 1) {
-      const visited = faker.date.past(25);
+      visited = faker.date.past(25);
       const review = new Review({
         restaurant: {
           restaurantId: i,

@@ -1,5 +1,5 @@
-    // Stretch goal: refactor into additional sub-components/rethink file system
-    // with potential nesting for sub-categories of components
+// Stretch goal: refactor into additional sub-components/rethink file system
+// with potential nesting for sub-categories of components
 
 import React from 'react';
 import Header from './Header';
@@ -25,6 +25,7 @@ class App extends React.Component {
       .then((reviews) => {
         this.setState({
           allReviews: reviews,
+          filteredReviews: reviews,
         });
       });
   }
@@ -35,8 +36,8 @@ class App extends React.Component {
         <div id="reviews_component">
           <Header count={this.state.allReviews.length} />
           <Filters />
-          <ReviewList reviews={this.state.allReviews}/>
-          <Footer count={this.state.allReviews.length}/>
+          <ReviewList reviews={this.state.allReviews} />
+          <Footer count={this.state.allReviews.length} />
         </div>
       </div>
     );

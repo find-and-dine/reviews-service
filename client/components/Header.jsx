@@ -5,11 +5,12 @@ class Header extends React.Component {
     super(props);
     const { count } = this.props;
     this.state = {
-      count,
+   //   count,
     };
   }
 
   render() {
+    const { count } = this.props;
     return (
       <div id="reviews_header">
 
@@ -17,7 +18,7 @@ class Header extends React.Component {
           <span id="reviews_header_title_text">
             Reviews
             <span id="reviews_header_count">
-              {this.props.count}
+              {count}
             </span>
           </span>
 

@@ -5,81 +5,87 @@ class Review extends React.Component {
     super(props);
     const { review } = this.props;
     this.state = {
-      review,
+     // review,
     };
   }
 
   // Stretch goal: Refactor into smaller React components
-  // TO DO: There's something wacky going on with my badging element. Need to fix its styles. + Lots of cleaning up details.
+  // TO DO: There's something wacky going on with my badging element. Need to fix its styles.
+  // Lots of cleaning up details.
   render() {
 
     const bubble = (rating) => {
       let bubbles = '';
-      for(var i = 0; i < rating; i++) {
+      let i = 0;
+      for (i = 0; i < rating; i += 1) {
         bubbles += '\u2B24 ';
       }
-      for (let x = i; x < 5; x++) {
+      for (let x = i; x < 5; x += 1) {
         bubbles += '\u25EF ';
       }
-      console.log(bubbles);
       return bubbles;
     }
 
     const content = (body) => {
-      let words = body.split(' ');
+      const words = body.split(' ');
 
-      if(words.length <= 45) {
+      if (words.length <= 45) {
         return body;
       }
 
       let text = words[0];
-      for (let i = 1; i < 45; i++){
+      for (let i = 1; i < 45; i += 1){
         text += ' ' + words[i];
       }
 
       return (
         <>
-          {text}... <span className="more">More</span>
+          {text}
+          ...
+          <span className="more">More</span>
         </>
       );
-    }
+    };
 
     const ago = (reviewedDate) => {
       const milliAgo = new Date() - new Date(reviewedDate);
       let numUnits = null;
-      let unit = ''
+      let unit = '';
 
-      if(milliAgo >= (1000 * 60 * 60 * 24 * 7 * 4 * 12)) { // years
+      if (milliAgo >= (1000 * 60 * 60 * 24 * 7 * 4 * 12)) { // years
         numUnits = Math.floor(milliAgo / (1000 * 60 * 60 * 24 * 7 * 4 * 12));
         unit = 'year';
-      } else if(milliAgo >= (1000 * 60 * 60 * 24 * 7 * 4)) { // months
+      } else if (milliAgo >= (1000 * 60 * 60 * 24 * 7 * 4)) { // months
         numUnits = Math.floor(milliAgo / (1000 * 60 * 60 * 24 * 7 * 4));
         unit = 'month';
-      } else if(milliAgo >= (1000 * 60 * 60 * 24 * 7)) { // weeks
+      } else if (milliAgo >= (1000 * 60 * 60 * 24 * 7)) { // weeks
         numUnits = Math.floor(milliAgo / (1000 * 60 * 60 * 24 * 7));
         unit = 'week';
-      } else if(milliAgo >= (1000 * 60 * 60 * 24)) { // days
+      } else if (milliAgo >= (1000 * 60 * 60 * 24)) { // days
         numUnits = Math.floor(milliAgo / (1000 * 60 * 60 * 24));
         unit = 'day';
-      } else if(milliAgo >= (1000 * 60 * 60)) { // hours
+      } else if (milliAgo >= (1000 * 60 * 60)) { // hours
         numUnits = Math.floor(milliAgo / (1000 * 60 * 60));
         unit = 'hour';
-      } else if(milliAgo >= (1000 * 60)) { // minutes
+      } else if (milliAgo >= (1000 * 60)) { // minutes
         numUnits = Math.floor(milliAgo / (1000 * 60));
         unit = 'minute';
-      } else {  // seconds
+      } else { // seconds
         numUnits = Math.floor(milliAgo / 1000);
         unit = 'second';
       }
 
-      if(numUnits > 1) {
-        return numUnits + ' ' + unit + 's ';
+      if (numUnits > 1) {
+        numUnits += ' ' + unit + 's ';
       } else {
-        return numUnits + ' ' + unit + ' ';
+        numUnits += ' ' + unit + ' ';
       }
+
+      return numUnits;
     }
 
-    // change key for className="review_body_entry_text"; it's currently written to facilitate a test that should be refactored
+    // change key for className="review_body_entry_text";
+    //it's currently written to facilitate a test that should be refactored
     // same with className="bubbles" and "date_ago"
     return (
       <div className="review_container">
@@ -93,7 +99,7 @@ class Review extends React.Component {
                 <div className="member_avatar">
                   <div className="avatar_wrapper">
                     <div className="avatar_holder">
-                      <img className="avatar_image" src={this.props.review ? this.props.review.user.avatarURL : ''} />
+                      <img className="avatar_image" src={this.props.review ? this.props.review.user.avatarURL : ''} alt="avatar" />
                     </div>
                   </div>
                 </div>
@@ -107,7 +113,8 @@ class Review extends React.Component {
               </div>
 
               <div className="info_text">
-                {this.props.review ? this.props.review.user.reviewsCount : ''} reviews
+                {this.props.review ? this.props.review.user.reviewsCount : ''}
+                reviews
               </div>
 
             </div>
@@ -115,7 +122,7 @@ class Review extends React.Component {
 
           <div className="column_content">
 
-            <span key={this.props.review ? this.props.review.rating + "bubble": 0} className="bubbles">{this.props.review ? '' + bubble(this.props.review.rating) : ''} </span>
+            <span key={this.props.review ? this.props.review.rating + 'bubble': 0} className="bubbles">{this.props.review ? '' + bubble(this.props.review.rating) : ''} </span>
             <span key={this.props.review ? this.props.review.hereFor : ''} className="date_ago"> Reviewed {this.props.review ? ago(this.props.review.timePosted) : ''}ago</span>
 
             <div className="title_area">

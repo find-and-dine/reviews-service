@@ -21,9 +21,9 @@ class Filters extends React.Component {
   // TO DO: Refactor into subcomponents
   render() {
     return (
-    <div className="temp">
-      <img className="temp" src="https://i.imgur.com/DGuU9Yz.png" width="750px" />
-    </div>
+      <div className="temp">
+        <img className="temp" src="https://i.imgur.com/DGuU9Yz.png" width="750px" alt="checkbox" />
+      </div>
     );
   }
 }

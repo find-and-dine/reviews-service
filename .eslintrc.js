@@ -5,7 +5,6 @@ module.exports = {
     node: true,
   },
   extends: [
-    'eslint:recommended',
     'plugin:react/recommended',
     'airbnb',
   ],
@@ -24,5 +23,6 @@ module.exports = {
     'react',
   ],
   rules: {
+    'react/prop-types': 'off'
   },
 };
