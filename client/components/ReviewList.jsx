@@ -5,13 +5,13 @@ class ReviewList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      truncated = true;
+      truncated: true
     }
   }
 
   // TO DO: Account for edge case of n < 10
   render() {
-    const reviews = props.reviews.slice(0, 10).map((review) =>
+    const reviews = this.props.reviews.slice(0, 10).map((review) =>
       <Review key={review._id} review={review} />
     );
     return (

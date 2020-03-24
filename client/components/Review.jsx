@@ -1,14 +1,15 @@
 import React from 'react';
-import Review from './ReviewContent';
+import ReviewContent from './ReviewContent';
 import Author from './Author';
 
-function Review(props) {
+class Review extends React.Component {
   constructor(props) {
     super(props);
     const { review } = this.props;
     this.state = {
       votes: null,
-      helpfulVotesCount: null
+      helpfulVotesCount: null,
+
     };
   }
 
