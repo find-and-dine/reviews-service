@@ -266,17 +266,30 @@ a {
 
 .review_container {
   display: block;
+  border-top: 1px solid #e5e5e5;
 }
 
 .review {
-  border-top: 1px solid #e5e5e5;
   margin: 8px 0 4px;
   display: flex;
   flex-wrap: wrap;
   overflow: visible;
+  position: relative;
 }
 
-.review_content {
+.author_column {
+  box-sizing: border-box;
+  display: block;
+  padding: 8px 0;
+  width: 16.66666667%;
+  min-width: 100px;
+}
+
+.memberInfo {
+  cursor: pointer;
+}
+
+ .review_content {
   border-top-width: 0;
   position: relative;
   overflow: visible;
@@ -286,7 +299,23 @@ a {
   box-sizing: border-box;
 }
 
-.member_info {
+.avatar {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.avatar_image img {
+  margin: 0px auto;
+  width: 72px;
+  height: 72px;
+  border-radius: 72px;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  border: 50%;
+}
+
+/*.member_info {
   display: block;
   margin: 0;
   min-width: 100px;
@@ -361,7 +390,7 @@ a {
   padding: 8px 0;
   display: block;
   width: 75%;
-}
+} */
 
 /*-Note to self: Check back here to better understand
 ::before and ::after-*/
