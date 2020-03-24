@@ -1,5 +1,7 @@
 import React from 'react';
 
+// TO DO: Break into smaller subcomponents
+
 class ReviewContent extends React.Component {
   constructor(props) {
     super(props);

@@ -277,6 +277,8 @@ a {
   position: relative;
 }
 
+/*---Author Component---*/
+
 .author_column {
   box-sizing: border-box;
   display: block;
@@ -285,7 +287,7 @@ a {
   min-width: 100px;
 }
 
-.memberInfo {
+.member_info {
   cursor: pointer;
 }
 
@@ -315,82 +317,32 @@ a {
   border: 50%;
 }
 
-/*.member_info {
+.author_name {
   display: block;
-  margin: 0;
-  min-width: 100px;
-  width: 16.66666667%;
-  padding: 8px 0;
-}
-
-.member_column_info {
-  padding: 0;
-  min-width: 0;
-}
-
-.memberOverlayLink {
-  cursor: pointer;
-}
-
-.member_avatar {
-  margin-bottom: 10px;
-}
-
-.avatar_wrapper {
-  height: 80px;
-  margin: 0;
-}
-
-/* .avatar_link {
-  height: auto;
-  width: auto;
-} */
-
-.avatar_holder {
-  margin: 0 auto;
-  width: 72px;
-  height: 72px;
-  border-radius: 72%;
-  overflow: hidden;
-}
-
-.avatar_image {
-  width: 100%!important;
-  height: 100%!important;
-  border-radius: 0;
-  overflow: visible;
-}
-
-.info_text {
-  padding: 0 8px;
   flex-direction: column;
-  font-size: 11px;
-  justify-content: center;
-  margin: 0;
-  overflow: hidden;
+  padding: 0 8px;
   text-align: center;
   height: inherit;
   vertical-align: top;
+  justify-content: center;
   color: #4a4a4a;
   text-overflow: ellipsis;
 }
 
-.info_text_content {
-  padding: 0;
-  text-align: center;
-}
-
-.badging {
-  width: 100%;
-  display: inline-block;
-  line-height: 16px;
-}
-
-.column_content {
-  padding: 8px 0;
+.member_badge {
   display: block;
-  width: 75%;
-} */
+  color: #2c2c2c;
+}
+
+.badge_text {
+  display: inline-block;
+  text-align: center;
+  font-size: 11px;
+  line-height: 16px;
+  color: #4a4a4a;
+}
+
+/*---AuthorContent Component---*/
 
 /*-Note to self: Check back here to better understand
 ::before and ::after-*/
