@@ -24,4 +24,8 @@ app.get('/api/reviews/:restaurantId', (req, res) => {
   });
 });
 
+app.get('/api/bundle', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '..', 'public', 'bundle.js'));
+});
+
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
