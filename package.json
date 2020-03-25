@@ -11,7 +11,8 @@
     "build": "webpack -d --watch",
     "seed": "node database/seed.js",
     "lint": "eslint --ext .jsx .",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "deploy": "aws s3 sync public/ s3://reviewscomponent"
   },
   "dependencies": {
     "axios": "^0.19.2",
