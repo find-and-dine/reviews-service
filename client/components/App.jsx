@@ -20,7 +20,7 @@ class App extends React.Component {
 
   componentDidMount() {
     const { restaurantId } = this.props;
-    fetch(`/api/reviews/${restaurantId}/`)
+    fetch(`http://localhost:3003/api/reviews/${restaurantId}/`)
       .then((data) => data.json())
       .then((reviews) => {
         this.setState({

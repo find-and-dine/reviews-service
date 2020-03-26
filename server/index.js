@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const db = require('../database/index.js');
-
+const cors = require('cors');
 const app = express();
 const PORT = 3003;
 
@@ -9,6 +9,7 @@ const PORT = 3003;
 // of path parameters
 
 app.use(express.json());
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use('/:restaurantId', express.static(path.resolve(__dirname, '..', 'public')));
 
