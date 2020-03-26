@@ -3,7 +3,7 @@ import React from 'react';
 function Header(props) {
   const { count } = props;
   return (
-    <div id="header">
+    <div className="header">
       <span id="title_text">
         Reviews
           <span id="all_reviews_count">
