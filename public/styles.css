@@ -15,13 +15,13 @@ body {
   font-size: medium;
 }
 
-a {
+#reviews_component a {
   text-decoration: inherit;
 }
 
 /*----------App Component----------*/
 
-#reviews {
+#reviews_component #reviews {
   margin-bottom: 24px;
   border: 1px solid #e0e0e0;
   border-radius: 2px;
@@ -37,7 +37,7 @@ a {
 
 /*-----Reusable Classes-----*/
 
-.primary_button {
+#reviews_component .primary_button {
   background-clip: padding-box;
   background-color: #000;
   border: 1px solid #000;
@@ -53,13 +53,13 @@ a {
   line-height: 18px;
 }
 
-.secondary_button {
+#reviews_component .secondary_button {
 
 }
 
 /*-----Header Component-----*/
 
-#header {
+#reviews_component #header {
   border-bottom: 1px solid #e0e0e0;
   padding-bottom: 12px;
   display: flex;
@@ -69,30 +69,30 @@ a {
   color: #000a12;
 }
 
-#title_text {
+#reviews_component #title_text {
   flex-grow: 1;
   margin-right: 5px;
 }
 
-#all_reviews_count {
+#reviews_component #all_reviews_count {
   padding-left: 12px;
   color: #767676;
 }
 
 /*-----Filters Component-----*/
 
- .temp {
+ #reviews_component .temp {
   max-width: 698px;
 }
 
 /*---Review Component---*/
 
-.review_container {
+#reviews_component .review_container {
   display: block;
   border-top: 1px solid #e5e5e5;
 }
 
-.review {
+#reviews_component .review {
   margin: 8px 0 4px;
   display: flex;
   flex-wrap: wrap;
@@ -102,7 +102,7 @@ a {
 
 /*---Author Component---*/
 
-.author_column {
+#reviews_component .author_column {
   box-sizing: border-box;
   display: block;
   padding: 8px 0;
@@ -110,11 +110,11 @@ a {
   min-width: 100px;
 }
 
-.member_info {
+#reviews_component .member_info {
   cursor: pointer;
 }
 
- .review_content {
+ #reviews_component .review_content {
   border-top-width: 0;
   position: relative;
   overflow: visible;
@@ -124,12 +124,12 @@ a {
   box-sizing: border-box;
 }
 
-.avatar {
+#reviews_component .avatar {
   margin-bottom: 10px;
   display: block;
 }
 
-.avatar_image img {
+#reviews_component .avatar_image img {
   margin: 0px auto;
   width: 72px;
   height: 72px;
@@ -140,7 +140,7 @@ a {
   border: 50%;
 }
 
-.author_name {
+#reviews_component .author_name {
   display: block;
   flex-direction: column;
   padding: 0 8px;
@@ -153,7 +153,7 @@ a {
   text-overflow: ellipsis;
 }
 
-.member_badge {
+#reviews_component .member_badge {
   display: block;
   color: #2c2c2c;
   font-size: 11px;
@@ -164,7 +164,7 @@ a {
 
 /*---ReviewContent Component---*/
 
-#review_content {
+#reviews_component #review_content {
   box-sizing: border-box;
   display: block;
   flex-basis: auto;
@@ -172,20 +172,20 @@ a {
   width: 75%;
 }
 
-.bubbles {
+#reviews_component .bubbles {
   margin: 1px 8px 0 1px;
   display: inline-block;
   position: relative;
   color: #00aa6c;
 }
 
-.date_ago {
+#reviews_component .date_ago {
   color: #4a4a4a;
   font-size: 12px;
   padding-right: 9px;
 }
 
-.review_title {
+#reviews_component .review_title {
   display: block;
   text-align: left;
   margin: 8px 0 0;
@@ -198,42 +198,42 @@ a {
   cursor: pointer;
 }
 
-.review_body {
+#reviews_component .review_body {
   margin-top: 5px;
   display: block;
   font-size: 14px;
   line-height: 20px;
 }
 
-.review_body p {
+#reviews_component .review_body p {
   overflow-wrap: break-word;
 }
 
-.more {
+#reviews_component .more {
   cursor: pointer;
   font-weight: 700;
 }
 
-.date_visited {
+#reviews_component .date_visited {
   display: block;
   font-size: 14px;
   color: #4a4a4a;
 }
 
-.date_visited_label {
+#reviews_component .date_visited_label {
   margin-top: 12px;
   display: inline-block;
   color: #000a12;
   font-weight: 700;
 }
 
-.vote_line {
+#reviews_component .vote_line {
   width: 111%;
   overflow: hidden;
   margin-top: 12px;
 }
 
-.flag {
+#reviews_component .flag {
   width: auto;
   float: right;
   padding-top: 3px;
@@ -248,7 +248,7 @@ a {
 
 /*-Note to self: Might need a ::before here-*/
 
-.helpful_area {
+#reviews_component .helpful_area {
   overflow: visible;
   float: none;
   margin: 0;
@@ -256,7 +256,7 @@ a {
   padding: 0;
 }
 
-.isHelpful {
+#reviews_component .isHelpful {
   font-size: 12px;
   margin: 4px 8px 0 0;
   color: #4a4a4a;
@@ -264,7 +264,7 @@ a {
   float: left;
 }
 
-.thankButton {
+#reviews_component .thankButton {
   height: 20px;
   padding: 0 6px;
   border: 1px solid #e5e5e5;
@@ -276,7 +276,7 @@ a {
   box-sizing: border-box;
 }
 
-.thumbsIcon {
+#reviews_component .thumbsIcon {
   font-size: 14px;
   height: auto;
   line-height: 19px;
@@ -285,7 +285,7 @@ a {
   color: #000;
 }
 
-#thumbs {
+#reviews_component #thumbs {
   width: 15px;
 }
 
@@ -295,13 +295,13 @@ a {
 
 /*-----Footer Component-----*/
 
-#footer {
+#reviews_component #footer {
   display: block;
   margin: 0;
   padding: 0;
 }
 
-#pagination {
+#reviews_component #pagination {
   border-width: 1px 0 0;
   border-style: solid;
   border-color: #e5e5e5;
@@ -317,7 +317,7 @@ a {
 
 /*-Note to self: Some of this can be refactored to address redundancy; consider breaking into subclasses, e.g. a button class-*/
 
-#previousButton {
+#reviews_component #previousButton {
   float: left;
   display: inline-block;
   pointer-events: none;
@@ -343,7 +343,7 @@ a {
   width: 85px;
 }
 
-#nextButton {
+#reviews_component #nextButton {
   float: right;
   background-color: #000;
   border-color: #000;
@@ -365,17 +365,10 @@ a {
   width: 85px;
 }
 
-/* #pageNumbers {
-  display: inline-block;
-  padding-top: 3px;
-  margin: 0;
-  padding: 0;
-} */
-
 /*-Note to self: Page list should be subcomponent so as to more elegantly handle dynamic logic/rendering*/
 /*-TO DO: Improve CSS for page numbers; this is very bare bones and does not support all functionality-*/
 
-.page_number_selected {
+#reviews_component .page_number_selected {
   color: #000;
   background-color: #f2f2f2;
   border-color: #f2f2f2;
@@ -391,7 +384,7 @@ a {
   text-decoration: none;
 }
 
-.page_number {
+#reviews_component .page_number {
   text-decoration: none;
   color: #000;
   cursor: pointer;
@@ -405,7 +398,7 @@ a {
   border-radius: 2px;
 }
 
-#pageSeparator {
+#reviews_component #pageSeparator {
   width: 32px;
   line-height: 30px;
   color: #767676;
