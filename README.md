@@ -1,13 +1,10 @@
-# Project Name
+# Reviews Component
 
-> Project description
+A reviews component for a restaurant review item page. Mimics visual design of Tripadvisor Restaurants. 
 
-## Related Projects
+## For Related Projects:
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/guilttripadvisors
 
 ## Table of Contents
 
@@ -15,9 +12,15 @@
 1. [Requirements](#requirements)
 1. [Development](#development)
 
-## Usage
+## Installation and Usage
 
-> Some usage instructions
+```bash
+npm install
+npm run seed
+npm run build
+npm start
+```
+Navigate to localhost:3005
 
 ## Requirements
 
@@ -25,15 +28,3 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 - Node 6.13.0
 - etc
-
-## Development
-
-### Installing Dependencies
-
-From within the root directory:
-
-```sh
-npm install -g webpack
-npm install
-```
-
