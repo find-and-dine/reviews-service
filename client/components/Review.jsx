@@ -1,5 +1,5 @@
 import React from 'react';
-import ReviewContent from './ReviewContent';
+import ReviewColumn from './ReviewColumn';
 import Author from './Author';
 
 class Review extends React.Component {
@@ -24,7 +24,7 @@ class Review extends React.Component {
       <div className="review_container">
         <div className="review">
           <Author review={review} />
-          <ReviewContent review={review} />
+          <ReviewColumn review={review} />
         </div>
       </div>
     );

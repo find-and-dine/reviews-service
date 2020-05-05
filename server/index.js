@@ -13,7 +13,6 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use('/:restaurantId', express.static(path.resolve(__dirname, '..', 'public')));
 
-// get all reviews for a given restaurant
 app.get('/api/reviews/:restaurantId', (req, res) => {
   const { restaurantId } = req.params;
   db.find({ 'restaurant.restaurantId': restaurantId }, (err, data) => {
