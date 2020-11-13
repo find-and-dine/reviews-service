@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/guilttrip_reviews', { useNewUrlParser: true });
+// Reminder: change localhost to database
+mongoose.connect('mongodb://localhost/reviews', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
 
@@ -9,9 +10,6 @@ db.once('open', () => {
   console.log('database connected');
 });
 
-// Stretch goal #1: Add functionality for Staff Responses and Photos
-// Stretch goal #2: Create separate documents for User, Staff, Staff Response, Photo, User,
-// and Restaurant
 const reviewSchema = new mongoose.Schema({
   restaurant: {
     restaurantId: Number,

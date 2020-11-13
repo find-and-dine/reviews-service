@@ -10,9 +10,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /*------------------- My CSS -------------------*/
 
 body {
-  background-color: #f2f2f2;
   font-family: ''DM Sans', sans-serif';
   font-size: medium;
+  background-color: #f2f2f2;
 }
 
 #reviews_component a {

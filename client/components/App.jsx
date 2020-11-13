@@ -1,6 +1,3 @@
-// Stretch goal: refactor into additional sub-components/rethink file system
-// with potential nesting for sub-categories of components
-
 import React from 'react';
 import Header from './Header';
 import Filters from './Filters';
@@ -20,7 +17,7 @@ class App extends React.Component {
 
   componentDidMount() {
     const { restaurantId } = this.props;
-    fetch(`http://localhost:3003/api/reviews/${restaurantId}/`)
+    fetch(`/api/reviews/${restaurantId}/`)
       .then((data) => data.json())
       .then((reviews) => {
         this.setState({
@@ -32,14 +29,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <div id="reviews">
-          <Header count={this.state.allReviews.length} />
-          <Filters />
-          <ReviewList reviews={this.state.allReviews} />
-          <Footer count={this.state.allReviews.length} />
-        </div>
-      </div>
+      <article id="reviews">
+        <Header count={this.state.allReviews.length} />
+        <Filters />
+        <ReviewList reviews={this.state.allReviews} />
+        <Footer count={this.state.allReviews.length} />
+      </article>
     );
   }
 }

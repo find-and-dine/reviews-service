@@ -5,9 +5,6 @@ const cors = require('cors');
 const app = express();
 const PORT = 3003;
 
-// Stretch goal: refactor to use query parameters instead
-// of path parameters
-
 app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
